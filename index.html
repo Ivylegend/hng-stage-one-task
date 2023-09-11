@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Icha Victory</title>
+  </head>
+  <body>
+    <div class="slack__profile">
+      <!-- Slack Username -->
+      <h1 data-testid="slackUserName">Icha Victory</h1>
+
+      <!-- Slack Profile Picture -->
+      <img src="slackprofile.PNG" alt="Icha-Victory" data-testid="slackDisplayImage" />
+
+      <!-- Current Day Of The Week -->
+      <p class="day" data-testid="currentDayOfTheWeek"> </p>
+
+      <!--Current UTC Time  -->
+      <p data-testid="currentUTCTime">Current Time:</p>
+
+      <!-- Track -->
+      <p data-testid="myTrack">Track: Frontend</p>
+
+      <!-- Github Profile -->
+      <a href="https://github.com/Ivylegend" target="_blank" data-testid="githubURL">My Github Profile</a>
+    </div>
+
+    <script>
+        function updateDayofWeek() {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const currentDate = new Date();
+            const currentDay = daysOfWeek[currentDate.getUTCDay()];
+            const dayElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+            dayElement.textContent = currentDay;
+        }
+
+        function updateTime() {
+            const currentDate = new Date();
+            const currentTime = currentDate.getUTCMilliseconds();
+            const timeElement = document.querySelector('[data-testid="currentUTCTime"]');
+            timeElement.textContent = currentTime + " ms";
+        }
+
+        updateDayofWeek();
+        setInterval(()=>{
+            updateTime();
+        }, 1000)
+
+    </script>
+  </body>
+</html>

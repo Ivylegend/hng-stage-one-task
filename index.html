@@ -7,47 +7,32 @@
     <title>Icha Victory</title>
   </head>
   <body>
-    <div class="slack__profile">
-      <!-- Slack Username -->
-      <h1 data-testid="slackUserName">Icha Victory</h1>
-
-      <!-- Slack Profile Picture -->
-      <img src="slackprofile.PNG" alt="Icha-Victory" data-testid="slackDisplayImage" />
-
-      <!-- Current Day Of The Week -->
-      <p class="day" data-testid="currentDayOfTheWeek"> </p>
-
-      <!--Current UTC Time  -->
-      <p data-testid="currentUTCTime">Current Time:</p>
-
-      <!-- Track -->
-      <p data-testid="myTrack">Track: Frontend</p>
-
-      <!-- Github Profile -->
-      <a href="https://github.com/Ivylegend/hng-stage-one-task/tree/main" target="_blank" data-testid="githubURL">Click here to see my source code</a>
-    </div>
-
-    <script>
-        function updateDayofWeek() {
-            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const currentDate = new Date();
-            const currentDay = daysOfWeek[currentDate.getUTCDay()];
-            const dayElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
-            dayElement.textContent = currentDay;
-        }
-
-        function updateTime() {
-            const currentDate = new Date();
-            const currentTime = currentDate.getUTCMilliseconds();
-            const timeElement = document.querySelector('[data-testid="currentUTCTime"]');
-            timeElement.textContent = currentTime + " ms";
-        }
-
-        updateDayofWeek();
-        setInterval(()=>{
-            updateTime();
-        }, 1000)
-
-    </script>
-  </body>
+  <header>
+    <h1>My Tech Goals (Next 2 Years)</h1>
+  </header>
+  <main>
+    <section class="info">
+     <p><b>Slack Display Name:</b> <span data-testid="slackDisplayName">Icha Victory</span></p>
+<br>
+ <p><b>Current Time (UTC):</b> <span id="currentTimeUTC" data-testid="currentTimeUTC"></span></p>
+<br>
+  <p><b>Current Day:</b> <span id="currentDay" data-testid="currentDay"></span></p>
+<br>
+  <p><b>Slack Email:</b> <span data-testid="slackEmail">victoryicha2@gmail.com</span></p>
+      <img src="./my-image.png" alt="Slack Profile Picture" data-testid="slackProfilePicture" width="200" height="200" >
+    </section>
+<section> 
+<p>In 2 years, I'm on a mission to become a frontend rockstar!  First up, mastering the holy trinity of web development: HTML, CSS, and JavaScript. Then, I'll be wielding popular frameworks (React, Vue.js, or Angular) to craft dynamic, user-centric interfaces. But that's not all!  I'll be diving into UI/UX design for intuitive experiences, accessibility for an inclusive web, and Git for seamless collaboration.  Finally, a killer portfolio will be my weapon of choice to conquer the frontend world!</p>
+</section>
+    <section class="links">
+<h3>Some useful links</h3>
+      <ul>
+        <li><a href="https://hng.tech/learn" data-testid="hngLink">hng.tech/learn</a></li>
+        <li><a href="https://keyword.dog" data-testid="keywordLink">keyword.dog</a></li>
+        <li><a href="https://scrapeanyweb.site" data-testid="scrapeanywebLink">scrapeanyweb.site</a></li>
+      </ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
 </html>
